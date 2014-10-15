@@ -3,17 +3,14 @@ package org.lhill.controller;
 /**
  * Created by Lucas on 10/15/2014.
  */
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/search")
 public class SearchRestController {
-    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
-    public String getGreeting(@PathVariable String name) {
-        String result = "Hello " + name;
+    @RequestMapping(value = "/result", method = RequestMethod.GET)
+    public String getGreeting(@RequestParam String query) {
+        String result = "Hello " + query;
         return result;
     }
 }
